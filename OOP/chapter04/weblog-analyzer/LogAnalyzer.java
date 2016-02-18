@@ -112,15 +112,24 @@ public class LogAnalyzer
          int firstPeriod = 0;
          for (int index=0; index < hourCounts.length; index++){
               int twoHours = 0;
-              twoHours = hourCounts[index] + hourCounts[index++];
+              if(index + 1 != hourCounts.length){
+                  twoHours = hourCounts[index] + hourCounts[index + 1];
+                 // System.out.println("ADDING" + hourCounts[index] + ": " + hourCounts[index + 1] + " INDEX IS NOW " + index);
+                }else{
+                twoHours = hourCounts[index];
+                }
+              
+            
+              
               System.out.println(twoHours + ": " + highest);
               if(twoHours > highest){
                   highest = twoHours;
-                  firstPeriod = hourCounts[index - 1];
-                  System.out.println("FirstPeriod=" +  index);
-                  //index++;
+                  firstPeriod = hourCounts[index];
+                 // System.out.println("FirstPeriod=" +  index);
+                  index++;
+                }else{
+                 index++;
                 }
-                
          }
             
        return firstPeriod;
