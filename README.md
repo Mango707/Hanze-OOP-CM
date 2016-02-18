@@ -1,0 +1,4 @@
+# Hanze-OOP-CM
+Exercises for OOP and CM
+
+THIS IS A TEST GIT FOR EDUCATIONAL PURPOSES
